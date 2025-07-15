@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydro - Premium Water Dispensers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="HYDRO1.png" alt="">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Pure Water, Perfect Dispensing</h1>
+            <p>Experience the ultimate in workplace hydration with Hydro's premium water dispensers. Clean, efficient, and reliable solutions for your business.</p>
+            <button class="cta-button" onclick="scrollToSection('products')">Explore Products</button>
+        </div>
+        <div class="hero-image">
+            <img src="HYDRO_AI.png" alt="Modern water dispenser">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Why Choose Hydro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Pure Filtration</h3>
+                    <p>Advanced multi-stage filtration system ensures every drop is crystal clear and refreshing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Energy Efficient</h3>
+                    <p>Eco-friendly design with energy-saving technology that reduces your carbon footprint.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Easy Maintenance</h3>
+                    <p>Simple maintenance procedures with 24/7 customer support and service guarantee.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Office Ready</h3>
+                    <p>Sleek, modern designs that complement any workplace environment perfectly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Water Dispensers</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    
+                    <div class="product-info">
+                        <h3>Hydro Classic</h3>
+                        <p>Perfect for small offices and teams. Compact design with hot and cold water options.</p>
+                        <ul class="product-features">
+                            <li>5-gallon capacity</li>
+                            <li>Hot & cold water</li>
+                            <li>Compact footprint</li>
+                        </ul>
+                        <button class="product-button">Learn More</button>
+                    </div>
+                </div>
+                <div class="product-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    
+                    <div class="product-info">
+                        <h3>Hydro Pro</h3>
+                        <p>Advanced filtration with touchless dispensing. Ideal for medium to large offices.</p>
+                        <ul class="product-features">
+                            <li>10-gallon capacity</li>
+                            <li>Touchless operation</li>
+                            <li>UV sterilization</li>
+                        </ul>
+                        <button class="product-button">Learn More</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    
+                    <div class="product-info">
+                        <h3>Hydro Elite</h3>
+                        <p>Premium solution with smart features and app connectivity for large enterprises.</p>
+                        <ul class="product-features">
+                            <li>15-gallon capacity</li>
+                            <li>Smart monitoring</li>
+                            <li>App connectivity</li>
+                        </ul>
+                        <button class="product-button">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> 1-800-HYDRO-99
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong> info@hydro.com
+                    </div>
+                    <div class="contact-item">
+                        <strong>Address:</strong> 123 Water Street, Hydro City, HC 12345
+                    </div>
+                    <div class="contact-item">
+                        <strong>Hours:</strong> Mon-Fri 8AM-6PM EST
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <h3>Request a Quote</h3>
+                    <input type="text" placeholder="Company Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Product Interest</option>
+                        <option value="classic">Hydro Classic</option>
+                        <option value="pro">Hydro Pro</option>
+                        <option value="elite">Hydro Elite</option>
+                    </select>
+                    <textarea placeholder="Additional Requirements" rows="4"></textarea>
+                    <button type="submit">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>HYDRO</h3>
+                    <p>Pure water solutions for modern workplaces.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hydro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
