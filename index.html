@@ -6,9 +6,18 @@
     <title>AquaTech - Dispensers de Agua Inteligentes</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+     <link
+    href="https://cdn.jsdelivr.net/npm/@hellouxpavel/cssanimation@latest/dist/cssanimation.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/@hellouxpavel/cssanimation@latest/dist/cssanimation-utility.min.css"
+    rel="stylesheet"
+  />
 </head>
 <body>
     <!-- Header -->
+     
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
@@ -16,21 +25,26 @@
                     <i class="fas fa-tint"></i>
                     <span>AquaTech</span>
                 </div>
+                <div class="cssanimation ca__fx-clipDiagonalWipeIn">
                 <ul class="nav-menu">
                     <li><a href="#inicio" class="nav-link">Inicio</a></li>
                     <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
                     <li><a href="#productos" class="nav-link">Productos</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
+                </div>
                 <div class="nav-actions">
                     <button class="btn-login" onclick="openLoginModal()">
                         <i class="fas fa-user"></i>
                         <span>Iniciar Sesión</span>
                     </button>
+                    <div class="cssanimation ca__fx-flipTwistCombo">
                     <button class="btn-cart" onclick="openCartModal()">
                         <i class="fas fa-shopping-cart"></i>
+                        
                         <span class="cart-count">0</span>
                     </button>
+                </div>
                 </div>
                 <div class="hamburger">
                     <span></span>
@@ -43,12 +57,15 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
+        
         <div class="hero-container">
             <div class="hero-content">
+                <div class="cssanimation ca__fx-bounceInRight">
                 <h1 class="hero-title">
                     <span class="highlight">Agua Pura</span> e Inteligente
                     <br>para tu Hogar y Oficina
                 </h1>
+                </div>
                 <p class="hero-description">
                     Descubre la nueva generación de dispensers de agua con tecnología IoT, 
                     filtración avanzada y control inteligente desde tu smartphone.
@@ -102,6 +119,7 @@
     <section id="nosotros" class="about">
         <div class="container">
             <div class="section-header">
+                
                 <h2 class="section-title">Sobre AquaTech</h2>
                 <p class="section-subtitle">Innovación y calidad en cada gota</p>
             </div>
@@ -481,5 +499,67 @@
     </div>
 
     <script src="app.js"></script>
+    <script>
+// Animación al hacer scroll (fade-in)
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll(
+        '.section-header, .about-item, .stat-item, .product-card, .footer-section'
+    );
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in', 'visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    animatedElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+});
+
+// Transición suave al hacer scroll con los botones
+function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Animación de números en estadísticas
+document.addEventListener('DOMContentLoaded', function() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(stat => {
+        const target = +stat.getAttribute('data-target');
+        let count = 0;
+        const increment = Math.ceil(target / 60);
+        function updateCount() {
+            count += increment;
+            if (count > target) count = target;
+            stat.textContent = count;
+            if (count < target) {
+                requestAnimationFrame(updateCount);
+            }
+        }
+        updateCount();
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.fade-in');
+    function showOnScroll() {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+});
+</script>
 </body>
 </html>

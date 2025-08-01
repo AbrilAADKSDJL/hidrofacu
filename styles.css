@@ -6,24 +6,24 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #06b6d4;
-    --accent-color: #f59e0b;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --background: #ffffff;
-    --surface: #f8fafc;
-    --border: #e5e7eb;
-    --success: #10b981;
-    --warning: #f59e0b;
-    --error: #ef4444;
-    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --primary-color: #143a6d;         /* Azul oscuro dominante */
+    --primary-dark: #0a2540;          /* Azul aún más oscuro */
+    --secondary-color: #2563eb;       /* Azul medio */
+    --accent-color: #60a5fa;          /* Azul claro/acento */
+    --text-primary: #10213a;          /* Azul oscuro para texto */
+    --text-secondary: #3b5998;        /* Azul grisáceo para texto secundario */
+    --background: #f4f8fb;            /* Fondo muy claro azul */
+    --surface: #e3eefa;               /* Superficies claras azuladas */
+    --border: #b6c7e3;                /* Bordes azul claro */
+    --success: #38bdf8;               /* Azul celeste para éxito */
+    --warning: #1e40af;               /* Azul intenso para advertencia */
+    --error: #0a2540;                 /* Azul oscuro para error */
+    --gradient-primary: linear-gradient(135deg, #143a6d 0%, #2563eb 100%);
+    --gradient-secondary: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    --shadow-sm: 0 1px 2px 0 rgb(20 58 109 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(20 58 109 / 0.1), 0 2px 4px -2px rgb(20 58 109 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(20 58 109 / 0.1), 0 4px 6px -4px rgb(20 58 109 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(20 58 109 / 0.1), 0 8px 10px -6px rgb(20 58 109 / 0.1);
 }
 
 body {
@@ -1114,12 +1114,14 @@ body {
 
 /* Utility Classes */
 .fade-in {
-    animation: fadeInUp 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
 }
 
 .visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 @keyframes fadeIn {
