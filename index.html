@@ -1,191 +1,484 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hydro - Premium Water Dispensers</title>
+    <title>AquaTech - Dispensers de Agua Inteligentes</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <img src="HYDRO1.png" alt="">
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-tint"></i>
+                    <span>AquaTech</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#productos" class="nav-link">Productos</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-login" onclick="openLoginModal()">
+                        <i class="fas fa-user"></i>
+                        <span>Iniciar Sesión</span>
+                    </button>
+                    <button class="btn-cart" onclick="openCartModal()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Pure Water, Perfect Dispensing</h1>
-            <p>Experience the ultimate in workplace hydration with Hydro's premium water dispensers. Clean, efficient, and reliable solutions for your business.</p>
-            <button class="cta-button" onclick="scrollToSection('products')">Explore Products</button>
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="highlight">Agua Pura</span> e Inteligente
+                    <br>para tu Hogar y Oficina
+                </h1>
+                <p class="hero-description">
+                    Descubre la nueva generación de dispensers de agua con tecnología IoT, 
+                    filtración avanzada y control inteligente desde tu smartphone.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('productos')">
+                        Ver Productos
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Ver Demo
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-wifi"></i>
+                    <span>Conectividad WiFi</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-thermometer-half"></i>
+                    <span>Control de Temperatura</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-filter"></i>
+                    <span>Filtración Avanzada</span>
+                </div>
+                <div class="dispenser-mockup">
+                    <div class="dispenser-body">
+                        <div class="dispenser-screen"></div>
+                        <div class="dispenser-buttons">
+                            <div class="btn-hot"></div>
+                            <div class="btn-cold"></div>
+                        </div>
+                        <div class="dispenser-spout"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="hero-image">
-            <img src="HYDRO_AI.png" alt="Modern water dispenser">
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="nosotros" class="about">
         <div class="container">
-            <h2>Why Choose Hydro?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💧</div>
-                    <h3>Pure Filtration</h3>
-                    <p>Advanced multi-stage filtration system ensures every drop is crystal clear and refreshing.</p>
+            <div class="section-header">
+                <h2 class="section-title">Sobre AquaTech</h2>
+                <p class="section-subtitle">Innovación y calidad en cada gota</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="about-info">
+                            <h3>Innovación Constante</h3>
+                            <p>Desarrollamos tecnología de vanguardia para ofrecer la mejor experiencia en hidratación inteligente.</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="about-info">
+                            <h3>Calidad Premium</h3>
+                            <p>Nuestros productos cumplen con los más altos estándares de calidad y certificaciones internacionales.</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="about-info">
+                            <h3>Sostenibilidad</h3>
+                            <p>Comprometidos con el medio ambiente, reduciendo el uso de plásticos y promoviendo el consumo responsable.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Energy Efficient</h3>
-                    <p>Eco-friendly design with energy-saving technology that reduces your carbon footprint.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Easy Maintenance</h3>
-                    <p>Simple maintenance procedures with 24/7 customer support and service guarantee.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏢</div>
-                    <h3>Office Ready</h3>
-                    <p>Sleek, modern designs that complement any workplace environment perfectly.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10000">0</div>
+                        <div class="stat-label">Clientes Satisfechos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Ciudades</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="99">0</div>
+                        <div class="stat-label">% Satisfacción</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products">
+    <section id="productos" class="products">
         <div class="container">
-            <h2>Our Water Dispensers</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    
-                    <div class="product-info">
-                        <h3>Hydro Classic</h3>
-                        <p>Perfect for small offices and teams. Compact design with hot and cold water options.</p>
-                        <ul class="product-features">
-                            <li>5-gallon capacity</li>
-                            <li>Hot & cold water</li>
-                            <li>Compact footprint</li>
-                        </ul>
-                        <button class="product-button">Learn More</button>
-                    </div>
-                </div>
-                <div class="product-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    
-                    <div class="product-info">
-                        <h3>Hydro Pro</h3>
-                        <p>Advanced filtration with touchless dispensing. Ideal for medium to large offices.</p>
-                        <ul class="product-features">
-                            <li>10-gallon capacity</li>
-                            <li>Touchless operation</li>
-                            <li>UV sterilization</li>
-                        </ul>
-                        <button class="product-button">Learn More</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    
-                    <div class="product-info">
-                        <h3>Hydro Elite</h3>
-                        <p>Premium solution with smart features and app connectivity for large enterprises.</p>
-                        <ul class="product-features">
-                            <li>15-gallon capacity</li>
-                            <li>Smart monitoring</li>
-                            <li>App connectivity</li>
-                        </ul>
-                        <button class="product-button">Learn More</button>
-                    </div>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Productos</h2>
+                <p class="section-subtitle">Dispensers inteligentes para cada necesidad</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <strong>Phone:</strong> 1-800-HYDRO-99
+            <div class="products-grid">
+                <div class="product-card" data-product="1">
+                    <div class="product-image">
+                        <div class="product-badge">Más Vendido</div>
+                        <div class="product-mockup home">
+                            <div class="mockup-body">
+                                <div class="mockup-screen"></div>
+                                <div class="mockup-buttons">
+                                    <div class="btn-hot"></div>
+                                    <div class="btn-cold"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <strong>Email:</strong> info@hydro.com
-                    </div>
-                    <div class="contact-item">
-                        <strong>Address:</strong> 123 Water Street, Hydro City, HC 12345
-                    </div>
-                    <div class="contact-item">
-                        <strong>Hours:</strong> Mon-Fri 8AM-6PM EST
+                    <div class="product-info">
+                        <h3 class="product-name">AquaTech Home</h3>
+                        <p class="product-description">Perfecto para el hogar, con filtración de 5 etapas y control por app móvil.</p>
+                        <div class="product-features">
+                            <span class="feature"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="fas fa-mobile-alt"></i> App Control</span>
+                            <span class="feature"><i class="fas fa-filter"></i> 5 Filtros</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">$299</span>
+                            <span class="price-original">$399</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(1, 'AquaTech Home', 299)">
+                            <i class="fas fa-cart-plus"></i>
+                            Agregar al Carrito
+                        </button>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <h3>Request a Quote</h3>
-                    <input type="text" placeholder="Company Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="tel" placeholder="Phone Number" required>
-                    <select required>
-                        <option value="">Select Product Interest</option>
-                        <option value="classic">Hydro Classic</option>
-                        <option value="pro">Hydro Pro</option>
-                        <option value="elite">Hydro Elite</option>
-                    </select>
-                    <textarea placeholder="Additional Requirements" rows="4"></textarea>
-                    <button type="submit">Send Request</button>
-                </form>
+
+                <div class="product-card" data-product="2">
+                    <div class="product-image">
+                        <div class="product-badge new">Nuevo</div>
+                        <div class="product-mockup office">
+                            <div class="mockup-body">
+                                <div class="mockup-screen large"></div>
+                                <div class="mockup-buttons">
+                                    <div class="btn-hot"></div>
+                                    <div class="btn-cold"></div>
+                                    <div class="btn-room"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AquaTech Office Pro</h3>
+                        <p class="product-description">Diseñado para oficinas, con mayor capacidad y sistema de monitoreo avanzado.</p>
+                        <div class="product-features">
+                            <span class="feature"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="fas fa-chart-line"></i> Analytics</span>
+                            <span class="feature"><i class="fas fa-users"></i> Multi-usuario</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">$599</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(2, 'AquaTech Office Pro', 599)">
+                            <i class="fas fa-cart-plus"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product="3">
+                    <div class="product-image">
+                        <div class="product-mockup premium">
+                            <div class="mockup-body">
+                                <div class="mockup-screen premium"></div>
+                                <div class="mockup-buttons">
+                                    <div class="btn-hot"></div>
+                                    <div class="btn-cold"></div>
+                                    <div class="btn-room"></div>
+                                    <div class="btn-sparkling"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AquaTech Premium</h3>
+                        <p class="product-description">La experiencia definitiva con agua gasificada, UV-C y filtración premium.</p>
+                        <div class="product-features">
+                            <span class="feature"><i class="fas fa-gem"></i> Premium</span>
+                            <span class="feature"><i class="fas fa-sparkles"></i> Gasificada</span>
+                            <span class="feature"><i class="fas fa-shield-alt"></i> UV-C</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">$899</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(3, 'AquaTech Premium', 899)">
+                            <i class="fas fa-cart-plus"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="2">
+                    <div class="product-image">
+                        <div class="product-badge new">Nuevo</div>
+                        <div class="product-mockup office">
+                            <div class="mockup-body">
+                                <div class="mockup-screen large"></div>
+                                <div class="mockup-buttons">
+                                    <div class="btn-hot"></div>
+                                    <div class="btn-cold"></div>
+                                    <div class="btn-room"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AquaTech Office Pro</h3>
+                        <p class="product-description">Diseñado para oficinas, con mayor capacidad y sistema de monitoreo avanzado.</p>
+                        <div class="product-features">
+                            <span class="feature"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="fas fa-chart-line"></i> Analytics</span>
+                            <span class="feature"><i class="fas fa-users"></i> Multi-usuario</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">$599</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(2, 'AquaTech Office Pro', 599)">
+                            <i class="fas fa-cart-plus"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="2">
+                    <div class="product-image">
+                        <div class="product-badge new">Nuevo</div>
+                        <div class="product-mockup office">
+                            <div class="mockup-body">
+                                <div class="mockup-screen large"></div>
+                                <div class="mockup-buttons">
+                                    <div class="btn-hot"></div>
+                                    <div class="btn-cold"></div>
+                                    <div class="btn-room"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AquaTech Office Pro</h3>
+                        <p class="product-description">Diseñado para oficinas, con mayor capacidad y sistema de monitoreo avanzado.</p>
+                        <div class="product-features">
+                            <span class="feature"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="fas fa-chart-line"></i> Analytics</span>
+                            <span class="feature"><i class="fas fa-users"></i> Multi-usuario</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">$599</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(2, 'AquaTech Office Pro', 599)">
+                            <i class="fas fa-cart-plus"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="2">
+                    <div class="product-image">
+                        <div class="product-badge new">Nuevo</div>
+                        <div class="product-mockup office">
+                            <div class="mockup-body">
+                                <div class="mockup-screen large"></div>
+                                <div class="mockup-buttons">
+                                    <div class="btn-hot"></div>
+                                    <div class="btn-cold"></div>
+                                    <div class="btn-room"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AquaTech Office Pro</h3>
+                        <p class="product-description">Diseñado para oficinas, con mayor capacidad y sistema de monitoreo avanzado.</p>
+                        <div class="product-features">
+                            <span class="feature"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="fas fa-chart-line"></i> Analytics</span>
+                            <span class="feature"><i class="fas fa-users"></i> Multi-usuario</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">$599</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(2, 'AquaTech Office Pro', 599)">
+                            <i class="fas fa-cart-plus"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contacto" class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>HYDRO</h3>
-                    <p>Pure water solutions for modern workplaces.</p>
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-tint"></i>
+                        <span>AquaTech</span>
+                    </div>
+                    <p class="footer-description">
+                        Revolucionando la forma en que consumes agua con tecnología inteligente y sostenible.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <div class="footer-section">
+                    <h3 class="footer-title">Productos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">AquaTech Home</a></li>
+                        <li><a href="#">AquaTech Office Pro</a></li>
+                        <li><a href="#">AquaTech Premium</a></li>
+                        <li><a href="#">Accesorios</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">LinkedIn</a>
+                <div class="footer-section">
+                    <h3 class="footer-title">Soporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Instalación</a></li>
+                        <li><a href="#">Mantenimiento</a></li>
+                        <li><a href="#">Garantía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@aquatech.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Tech Street, Innovation City</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Hydro. All rights reserved.</p>
+                <p>&copy; 2024 AquaTech. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Iniciar Sesión</h2>
+                <span class="close" onclick="closeLoginModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Iniciar Sesión</button>
+                </form>
+                <div class="modal-footer">
+                    <p>¿No tienes cuenta? <a href="#" onclick="showRegisterForm()">Regístrate aquí</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Carrito de Compras</h2>
+                <span class="close" onclick="closeCartModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items">
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Tu carrito está vacío</p>
+                    </div>
+                </div>
+                <div id="cartTotal" class="cart-total" style="display: none;">
+                    <div class="total-line">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Envío:</span>
+                        <span>$50</span>
+                    </div>
+                    <div class="total-line total">
+                        <span>Total:</span>
+                        <span id="total">$0</span>
+                    </div>
+                    <button class="btn-primary full-width" onclick="checkout()">
+                        Proceder al Pago
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
